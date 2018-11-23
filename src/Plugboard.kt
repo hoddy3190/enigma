@@ -1,12 +1,15 @@
 package com.swet.enigma
 
-class Plugboard {
+class Plugboard(alphabet: Alphabet, config: Map<Int, Int>) : Configuration(config) {
 
-    fun substitite() {
+//    constructor(config: Map<Int, Int>) : super(config)
 
+    override fun substitute(input: Int): Int {
+        if (next != null) {
+            next!!.rotate()
+            return super.substitute(input)
+        }
+        return encode(input)
     }
 
-    fun plugboard() {
-
-    }
 }

@@ -1,19 +1,24 @@
 package com.swet.enigma
 
-class Configuration {
+open class Configuration(config: Map<Int, Int>) : Component() {
 
-    val config = ""
+    protected var config = config
 
-    fun decode() {
-
+    fun decode(input: Int): Int {
+        val reversed = config.entries.associate { (k, v) -> v to k }
+        if (reversed.containsKey(input))
+            return (reversed[input])!!
+        return input
     }
 
-    fun encode() {
-
+    fun encode(input: Int): Int {
+        if (config.containsKey(input))
+            return (config[input])!!
+        return input
     }
 
-    fun substitute() {
-
+    override fun substitute(input: Int): Int {
+        return decode(next!!.substitute(encode(input)))
     }
 
 }
