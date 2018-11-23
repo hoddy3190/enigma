@@ -27,34 +27,23 @@ class SimpleEnigma() : Component() {
     }
 
     init {
-
         alph = Alphabet("ABCD")
 
+        val reflector: Component = Reflector(3, alph, refcfg)
 
-        var next: Component = Reflector(3, alph, refcfg)
-//        setNextComponent(next)
+        val cp3: Component = Rotor(3, 3, alph, rotcfg)
+        cp3.setNextComponent(reflector)
 
-        /*
-        var cp = Rotor(3, 3, alph, rotcfg)
-        cp.setNextComponent(next)
-        next = cp
-        setNextComponent(cp)
+        val cp2: Component = Rotor(2, 2, alph, rotcfg)
+        cp2.setNextComponent(cp3)
 
-        var cp2 = Rotor(2, 2, alph, rotcfg)
-        cp2.setNextComponent(next)
-        next = cp2
+        val cp1: Component = Rotor(1, 1, alph, rotcfg)
+        cp1.setNextComponent(cp2)
 
+        val plugboard = Plugboard(pbcfg)
+        plugboard.setNextComponent(cp1)
 
-        */
-        var cp3 = Rotor(1, 1, alph, rotcfg)
-        cp3.setNextComponent(next)
-        next = cp3
-
-
-        var cp4 = Plugboard(alph, pbcfg)
-        cp4.setNextComponent(next)
-
-        setNextComponent(cp4)
+        setNextComponent(plugboard)
     }
 
 }

@@ -1,8 +1,11 @@
 package com.swet.enigma
 
-class Reflector(sp: Int, alphbet: Alphabet, config: Map<Int, Int>) : Configuration(config) {
+class Reflector(sp: Int, alphabet: Alphabet, cfg: Map<Int, Int>) : Configuration(cfg) {
 
-//    override val config = config
+    init {
+        alph = alphabet
+        config = cfg.entries.associate { (k, v) -> alph.shift(k, sp) to alph.shift(v, sp) }
+    }
 
     override fun substitute(input: Int): Int {
         if (config.containsKey(input)) {
@@ -11,7 +14,4 @@ class Reflector(sp: Int, alphbet: Alphabet, config: Map<Int, Int>) : Configurati
         return decode(input)
     }
 
-//    fun plugboard() {
-//
-//    }
 }

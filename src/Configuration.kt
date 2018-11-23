@@ -1,9 +1,8 @@
 package com.swet.enigma
 
-open class Configuration(config: Map<Int, Int>) : Component() {
+open class Configuration(protected var config: Map<Int, Int>) : Component() {
 
-    protected var config = config
-
+    // index transformation during a reflector to a plugboard
     fun decode(input: Int): Int {
         val reversed = config.entries.associate { (k, v) -> v to k }
         if (reversed.containsKey(input))
@@ -11,14 +10,21 @@ open class Configuration(config: Map<Int, Int>) : Component() {
         return input
     }
 
+    // index transformation during a plugboard to a reflector
     fun encode(input: Int): Int {
-        if (config.containsKey(input))
+        if (config.containsKey(input)) {
             return (config[input])!!
+        }
         return input
     }
 
     override fun substitute(input: Int): Int {
-        return decode(next!!.substitute(encode(input)))
+        val encoded = encode(input)
+        if (next === null) {
+            return decode(encoded)
+        }
+        val decodedByNext = next!!.substitute(encoded)
+        return decode(decodedByNext)
     }
 
 }
