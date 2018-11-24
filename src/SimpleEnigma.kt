@@ -2,8 +2,6 @@ package com.swet.enigma
 
 class SimpleEnigma() : Component() {
 
-//    override val alph = Alphabet("ABCD")
-
     private val refcfg = mapOf(
             0 to 2,
             1 to 3
@@ -18,7 +16,9 @@ class SimpleEnigma() : Component() {
 
     private val pbcfg = mapOf(
             1 to 2,
-            0 to 3
+            2 to 1,
+            0 to 0,
+            3 to 3
     )
 
     fun keystroke(ch: Char): Char {
@@ -31,13 +31,13 @@ class SimpleEnigma() : Component() {
 
         val reflector: Component = Reflector(3, alph, refcfg)
 
-        val cp3: Component = Rotor(3, 3, alph, rotcfg)
+        val cp3: Component = Rotor(2, 2, alph, rotcfg)
         cp3.setNextComponent(reflector)
 
-        val cp2: Component = Rotor(2, 2, alph, rotcfg)
+        val cp2: Component = Rotor(1, 1, alph, rotcfg)
         cp2.setNextComponent(cp3)
 
-        val cp1: Component = Rotor(1, 1, alph, rotcfg)
+        val cp1: Component = Rotor(0, 0, alph, rotcfg)
         cp1.setNextComponent(cp2)
 
         val plugboard = Plugboard(pbcfg)

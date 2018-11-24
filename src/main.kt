@@ -1,17 +1,20 @@
 package com.swet.enigma
 
 fun main(args: Array<String>) {
-    println("Hello World!")
-
 
     val enigma = SimpleEnigma()
-    println(enigma.keystroke('A'))
 
-
-
-    for (input in args) {
-
-
+    if (args.size > 0) {
+        for (input in args) {
+            for (ch in input.toCharArray()) {
+                println(enigma.keystroke(ch))
+            }
+        }
+    } else {
+        println(enigma.keystroke('A'))
+        println(enigma.keystroke('C'))
+        println(enigma.keystroke('C'))
+        println(enigma.keystroke('C'))
     }
 
 }
