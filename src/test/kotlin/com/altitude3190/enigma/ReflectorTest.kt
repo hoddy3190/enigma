@@ -1,5 +1,5 @@
-import com.altitude3190.enigma.Alphabet
-import com.altitude3190.enigma.Reflector
+package com.altitude3190.enigma
+
 import org.junit.Before
 import org.junit.Test
 import kotlin.test.assertEquals

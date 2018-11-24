@@ -1,6 +1,5 @@
-import com.altitude3190.enigma.Alphabet
-import com.altitude3190.enigma.Component
-import com.altitude3190.enigma.Plugboard
+package com.altitude3190.enigma
+
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
