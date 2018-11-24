@@ -11,7 +11,9 @@ class PlugboardTest {
 
     private val pbcfg = mapOf(
             1 to 2,
-            0 to 3
+            2 to 1,
+            0 to 3,
+            3 to 0
     )
     private val alph = Alphabet("ABCD")
     private lateinit var plugboard: Plugboard
@@ -24,13 +26,12 @@ class PlugboardTest {
     @Test
     fun substitute() {
         // no next
-        Assert.assertEquals(3, plugboard.substitute(0))
+        Assert.assertEquals(0, plugboard.substitute(0))
 
         // next
         val componentMock = Component()
         plugboard.setNextComponent(componentMock)
         Assert.assertEquals(1, plugboard.substitute(1))
     }
-
 
 }

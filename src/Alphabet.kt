@@ -4,7 +4,7 @@ class Alphabet(private val alph: String) {
 
     fun shift(index: Int, offset: Int): Int {
         if (index + offset >= getSize()) {
-            return index + offset - (getSize() - 1)
+            return index + offset - getSize()
         }
         return index + offset
     }
