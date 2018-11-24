@@ -26,10 +26,10 @@ class RotorTest {
         cp3 = Rotor(0, 2, alph, rotcfg)
 
         cp2 = Rotor(0, 2, alph, rotcfg)
-        cp2.setNextComponent(cp3)
+        cp2.next = cp3
 
         cp1 = Rotor(0, 1, alph, rotcfg)
-        cp1.setNextComponent(cp2)
+        cp1.next = cp2
     }
 
     @Test

@@ -30,7 +30,7 @@ class PlugboardTest {
 
         // next
         val componentMock = Component()
-        plugboard.setNextComponent(componentMock)
+        plugboard.next = componentMock
         Assert.assertEquals(1, plugboard.substitute(1))
     }
 

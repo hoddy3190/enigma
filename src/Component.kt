@@ -2,7 +2,7 @@ package com.swet.enigma
 
 open class Component() {
 
-    protected var next: Component? = null
+    var next: Component? = null
     protected lateinit var alph: Alphabet
 
     open fun rotate() {
@@ -16,10 +16,6 @@ open class Component() {
     open fun substitute(input: Int): Int {
         // please override me
         return input
-    }
-
-    fun setNextComponent(n: Component) {
-        next = n
     }
 
 }

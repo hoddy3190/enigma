@@ -32,18 +32,18 @@ class SimpleEnigma() : Component() {
         val reflector: Component = Reflector(3, alph, refcfg)
 
         val cp3: Component = Rotor(2, 2, alph, rotcfg)
-        cp3.setNextComponent(reflector)
+        cp3.next = reflector
 
         val cp2: Component = Rotor(1, 1, alph, rotcfg)
-        cp2.setNextComponent(cp3)
+        cp2.next = cp3
 
         val cp1: Component = Rotor(0, 0, alph, rotcfg)
-        cp1.setNextComponent(cp2)
+        cp1.next = cp2
 
         val plugboard = Plugboard(pbcfg)
-        plugboard.setNextComponent(cp1)
+        plugboard.next = cp1
 
-        setNextComponent(plugboard)
+        next = plugboard
     }
 
 }
