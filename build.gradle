@@ -1,0 +1,16 @@
+plugins {
+    id "org.jetbrains.kotlin.jvm" version "1.3.10"
+}
+
+apply plugin: 'application'
+mainClassName = 'MainKt'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib"
+    testCompile "org.jetbrains.kotlin:kotlin-test"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+}
