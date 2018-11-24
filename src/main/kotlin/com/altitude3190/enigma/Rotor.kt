@@ -1,4 +1,4 @@
-package com.swet.enigma
+package com.altitude3190.enigma
 
 class Rotor(sp: Int, lp: Int, alphabet: Alphabet, cfg: Map<Int, Int>) : Configuration(cfg) {
 

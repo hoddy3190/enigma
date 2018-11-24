@@ -1,6 +1,4 @@
-package com.swet.enigma.test
-
-import com.swet.enigma.Alphabet
+import com.altitude3190.enigma.Alphabet
 import org.junit.Assert.assertArrayEquals
 import org.junit.Before
 import org.junit.Test

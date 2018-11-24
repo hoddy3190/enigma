@@ -1,8 +1,6 @@
-package com.swet.enigma.test
-
-import com.swet.enigma.Alphabet
-import com.swet.enigma.Component
-import com.swet.enigma.Plugboard
+import com.altitude3190.enigma.Alphabet
+import com.altitude3190.enigma.Component
+import com.altitude3190.enigma.Plugboard
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test

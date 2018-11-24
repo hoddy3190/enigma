@@ -1,4 +1,4 @@
-package com.swet.enigma
+import com.altitude3190.enigma.SimpleEnigma
 
 fun main(args: Array<String>) {
 

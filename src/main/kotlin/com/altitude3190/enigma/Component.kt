@@ -1,4 +1,4 @@
-package com.swet.enigma
+package com.altitude3190.enigma
 
 open class Component() {
 
